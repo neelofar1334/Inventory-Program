@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPartController">
+   <children>
+      <HBox alignment="CENTER" layoutX="74.0" layoutY="56.0" spacing="30.0">
+         <children>
+            <Label text="Add Part">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouse" mnemonicParsing="false" onAction="#handleInHouseButton" text="In-House" toggleGroup="$addPartTG" selected="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="addPartTG" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="outsourced" mnemonicParsing="false" onAction="#handleOutsourcedButton" text="Outsourced" toggleGroup="$addPartTG" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER_RIGHT" layoutX="40.0" layoutY="124.0" spacing="5.0" style="-fx-alignment: left;">
+         <children>
+            <HBox alignment="BASELINE_LEFT" spacing="45.0">
+               <children>
+                  <Label text="ID" />
+                  <TextField fx:id="partID" editable="false" promptText="Auto Gen-Disabled" />
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="30.0">
+               <children>
+                  <Label text="Name" />
+                  <TextField fx:id="partName" promptText="Enter Value" />
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="40.0">
+               <children>
+                  <Label text="Inv" />
+                  <TextField fx:id="inv" promptText="Enter Value" />
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="30.0">
+               <children>
+                  <Label text="Price" />
+                  <TextField fx:id="partPrice" promptText="Enter Value" />
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="30.0">
+               <children>
+                  <Label text="Max" />
+                  <TextField fx:id="partMax" promptText="Enter Value" />
+                  <Label text="Min" />
+                  <TextField fx:id="partMin" promptText="Enter Value" />
+               </children>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="40.0">
+               <children>
+                  <Label fx:id="dynamicLabel" text="Machine ID" />
+                  <TextField fx:id="dynamicTextField" promptText="Enter Value" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="225.0" layoutY="353.0" spacing="20.0">
+         <children>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveHandler" text="Save" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelHandler" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

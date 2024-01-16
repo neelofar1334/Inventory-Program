@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-border-radius: 10; -fx-border-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddProductController">
+   <children>
+      <VBox layoutX="195.0" layoutY="35.0" />
+      <Button fx:id="removeButton" layoutX="506.0" layoutY="425.0" mnemonicParsing="false" onAction="#removeHandler" text="Remove Associated Part" />
+      <Button fx:id="saveButton" layoutX="505.0" layoutY="457.0" mnemonicParsing="false" onAction="#saveHandler" text="Save" />
+      <Button fx:id="cancelButton" layoutX="601.0" layoutY="458.0" mnemonicParsing="false" onAction="#cancelHandler" text="Cancel" />
+      <Button fx:id="addButton" layoutX="601.0" layoutY="221.0" mnemonicParsing="false" onAction="#addHandler" text="Add" />
+      <TextField fx:id="searchTopTable" layoutX="516.0" layoutY="21.0" onAction="#searchHandler" promptText="Search by Part ID or Name" />
+      <Label layoutX="45.0" layoutY="54.0" text="Add Product">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="associatedPartsTable" layoutX="321.0" layoutY="260.0" prefHeight="151.0" prefWidth="351.0">
+         <columns>
+            <TableColumn fx:id="allPartsIDColumn" prefWidth="67.0" text="Part ID" />
+            <TableColumn fx:id="allPartsNameColumn" prefWidth="68.33332824707031" text="Part Name" />
+            <TableColumn fx:id="allPartsInvColumn" prefWidth="92.83332824707031" text="Inventory Level" />
+            <TableColumn fx:id="allPartsPriceColumn" prefWidth="116.66667175292969" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <TableView fx:id="allPartsTable" layoutX="319.0" layoutY="65.0" prefHeight="151.0" prefWidth="351.0">
+         <columns>
+            <TableColumn fx:id="associatedPartsIDColumn" prefWidth="67.0" text="Part ID" />
+            <TableColumn fx:id="associatedPartsNameColumn" prefWidth="68.33332824707031" text="Part Name" />
+            <TableColumn fx:id="associatedPartsInvColumn" prefWidth="92.83332824707031" text="Inventory Level" />
+            <TableColumn fx:id="associatedPartsPriceColumn" prefWidth="116.66667175292969" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <VBox alignment="CENTER_LEFT" fillWidth="false" layoutX="21.0" layoutY="117.0" spacing="15.0">
+         <children>
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <Label text="ID" />
+                  <TextField fx:id="partID" editable="false" promptText="Auto Gen-Disabled" />
+
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Name" />
+                  <TextField fx:id="productName" promptText="Enter Name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="28.0">
+               <children>
+                  <Label text="Inv" />
+                  <TextField fx:id="productInv" promptText="Enter Inv" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="18.0">
+               <children>
+                  <Label text="Price" />
+                  <TextField fx:id="productPrice" promptText="Enter Price" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label text="Max" />
+                  <TextField fx:id="productMax" prefHeight="20.0" prefWidth="72.0" promptText="Enter Max" />
+                  <Label text="Min" />
+                  <TextField fx:id="productMin" prefHeight="20.0" prefWidth="72.0" promptText="Enter Min" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
